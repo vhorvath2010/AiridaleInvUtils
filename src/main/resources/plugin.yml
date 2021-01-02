@@ -12,3 +12,5 @@ commands:
     aliases: [sci, safeci]
   Junker:
     description: Open the Junker
+depend:
+  - Vault
