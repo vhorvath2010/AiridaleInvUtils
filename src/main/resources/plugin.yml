@@ -3,6 +3,7 @@ main: com.vhbob.airidaleinvutils.AiridaleInvUtils
 version: 1.0
 author: Vhbob
 description: An inventory utils plugin for AiridaleMC
+api-version: 1.16
 commands:
   SafeClearInventory:
     description: Safely clear a person's inventory
