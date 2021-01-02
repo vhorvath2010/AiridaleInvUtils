@@ -16,14 +16,18 @@ public class JunkerEvents implements Listener {
             // Calculate totals
             double total = 0;
             for (ItemStack selling : event.getView().getTopInventory()) {
-                if (AiridaleInvUtils.getPlugin().getConfig().contains("worth." + selling.getType().toString())) {
+                if (selling != null && AiridaleInvUtils.getPlugin().getConfig().contains("worth." + selling.getType().toString())) {
                     double worth = AiridaleInvUtils.getPlugin().getConfig().getDouble("worth." + selling.getType().toString());
                     total += worth * selling.getAmount();
                 }
             }
             // Give money
-            AiridaleInvUtils.getEconomy().depositPlayer((OfflinePlayer) event.getPlayer(), total);
-            event.getPlayer().sendMessage(ChatColor.GREEN + "+$" + total);
+            if (total > 0) {
+                AiridaleInvUtils.getEconomy().depositPlayer((OfflinePlayer) event.getPlayer(), total);
+                event.getPlayer().sendMessage(ChatColor.GREEN + "+$" + total);
+            } else {
+                event.getPlayer().sendMessage(ChatColor.RED + "You did not junk anything valuable");
+            }
         }
     }
 
