@@ -1,5 +1,6 @@
 package com.vhbob.airidaleinvutils;
 
+import com.vhbob.airidaleinvutils.commands.Junker;
 import com.vhbob.airidaleinvutils.commands.SafeClearInventory;
 import com.vhbob.airidaleinvutils.events.JunkerEvents;
 import net.milkbowl.vault.economy.Economy;
@@ -23,6 +24,7 @@ public class AiridaleInvUtils extends JavaPlugin {
         plugin = this;
         saveDefaultConfig();
         getCommand("SafeClearInventory").setExecutor(new SafeClearInventory());
+        getCommand("Junker").setExecutor(new Junker());
         Bukkit.getPluginManager().registerEvents(new JunkerEvents(), this);
     }
 

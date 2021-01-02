@@ -17,7 +17,7 @@ public class SafeClearInventory implements CommandExecutor {
                 Player target = Bukkit.getPlayer(strings[0]);
                 if (target != null) {
                     for (ItemStack itemStack : target.getInventory().getContents()) {
-                        if (!itemStack.hasItemMeta() || !itemStack.getItemMeta().hasLore()) {
+                        if (itemStack != null && (!itemStack.hasItemMeta() || !itemStack.getItemMeta().hasLore())) {
                             target.getInventory().removeItem(itemStack);
                         }
                     }
