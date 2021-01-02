@@ -13,5 +13,7 @@ commands:
     aliases: [sci, safeci]
   Junker:
     description: Open the Junker
+    permission: junker.use
+    permission-message: "§CYou do not have permission to do that!"
 depend:
   - Vault
