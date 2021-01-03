@@ -1,6 +1,6 @@
 name: AiridaleInvUtils
 main: com.vhbob.airidaleinvutils.AiridaleInvUtils
-version: 1.0.1
+version: 1.0.2
 author: Vhbob
 description: An inventory utils plugin for AiridaleMC
 api-version: 1.16

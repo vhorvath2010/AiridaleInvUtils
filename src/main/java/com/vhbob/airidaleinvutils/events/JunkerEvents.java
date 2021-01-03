@@ -16,7 +16,7 @@ public class JunkerEvents implements Listener {
             // Calculate totals
             double total = 0;
             double worth = AiridaleInvUtils.getPlugin().getConfig().getDouble("worth");
-            for (ItemStack selling : event.getView().getTopInventory()) {
+            for (ItemStack selling : event.getView().getTopInventory().getContents()) {
                 if (selling != null)
                     total += worth * selling.getAmount();
             }
