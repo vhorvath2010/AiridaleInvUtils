@@ -15,11 +15,10 @@ public class JunkerEvents implements Listener {
         if (event.getView().getTitle().equalsIgnoreCase(AiridaleInvUtils.getPlugin().getJunkerTitle())) {
             // Calculate totals
             double total = 0;
+            double worth = AiridaleInvUtils.getPlugin().getConfig().getDouble("worth");
             for (ItemStack selling : event.getView().getTopInventory()) {
-                if (selling != null && AiridaleInvUtils.getPlugin().getConfig().contains("worth." + selling.getType().toString())) {
-                    double worth = AiridaleInvUtils.getPlugin().getConfig().getDouble("worth." + selling.getType().toString());
+                if (selling != null)
                     total += worth * selling.getAmount();
-                }
             }
             // Give money
             if (total > 0) {
