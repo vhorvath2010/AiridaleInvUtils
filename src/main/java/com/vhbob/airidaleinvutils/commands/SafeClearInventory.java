@@ -21,6 +21,26 @@ public class SafeClearInventory implements CommandExecutor {
                             target.getInventory().removeItem(itemStack);
                         }
                     }
+                    ItemStack helm = target.getInventory().getHelmet();
+                    if (helm != null && (!helm.hasItemMeta() || !helm.getItemMeta().hasLore())) {
+                        target.getInventory().setHelmet(null);
+                    }
+                    ItemStack chest = target.getInventory().getChestplate();
+                    if (chest != null && (!chest.hasItemMeta() || !chest.getItemMeta().hasLore())) {
+                        target.getInventory().setChestplate(null);
+                    }
+                    ItemStack leg = target.getInventory().getLeggings();
+                    if (leg != null && (!leg.hasItemMeta() || !leg.getItemMeta().hasLore())) {
+                        target.getInventory().setLeggings(null);
+                    }
+                    ItemStack boot = target.getInventory().getBoots();
+                    if (boot != null && (!boot.hasItemMeta() || !boot.getItemMeta().hasLore())) {
+                        target.getInventory().setBoots(null);
+                    }
+                    ItemStack offHand = target.getInventory().getItemInOffHand();
+                    if (offHand != null && (!offHand.hasItemMeta() || !offHand.getItemMeta().hasLore())) {
+                        target.getInventory().setItemInOffHand(null);
+                    }
                     commandSender.sendMessage(ChatColor.GREEN + "Safely cleared " + target.getDisplayName() + "'s inventory");
                     return true;
                 }
